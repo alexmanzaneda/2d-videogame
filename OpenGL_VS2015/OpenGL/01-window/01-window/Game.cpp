@@ -22,6 +22,12 @@ void Game::keyPressed(int key)
 {
 	if(key == GLFW_KEY_ESCAPE) // Escape code
 		bPlay = false;
+	if (key == GLFW_KEY_1) // Presionem '1' per canviar el color de fons a vermell
+		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+	if (key == GLFW_KEY_2) // Presionem '2' per canviar el color de fons a verd
+		glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+	if (key == GLFW_KEY_3) // Presionem '3' per canviar el color de fons a blau
+		glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 	keys[key] = true;
 }
 
