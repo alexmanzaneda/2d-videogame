@@ -34,15 +34,19 @@ void Scene::render()
 {
 	// Change quad colors using elapsed time
 	float value = (sin(currentTime / 1000.f) + 1.0f) / 2.0f;
+	float scaleValue = (cos(currentTime / 1000.f) + 1.0f) / 2.0f * 0.5f + 0.5f; // Scale between 0.5 and 1.0
 
 	program.use();
+
+	program.setUniform2f("scale", scaleValue, scaleValue);
+
 	program.setUniform4f("color", value, value, value, 1.0f);
 	quads[0]->render();
-	program.setUniform4f("color", value, 0, 0, 1.0f);
+	program.setUniform4f("color", 1.0f, value, value, 1.0f);
 	quads[1]->render();
-	program.setUniform4f("color", 0, value, 0, 1.0f);
+	program.setUniform4f("color", value, 1.0f, value, 1.0f);
 	quads[2]->render();
-	program.setUniform4f("color", 0, 0, value, 1.0f);
+	program.setUniform4f("color", value, value, 1.0f, 1.0f);
 	quads[3]->render();
 }
 
