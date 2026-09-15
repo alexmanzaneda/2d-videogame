@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Debug\\Quad.obj",
+            "outputs": [
+                "Debug\\Quad.h.obj.dt.module.json",
+                "Debug\\Quad.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
